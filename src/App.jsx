@@ -201,15 +201,26 @@ function App() {
     });
     setSites(enrichedSites);
 
-    const initialLocks = {};
-    Object.entries(SITE_CONFIG).forEach(([id, config]) => {
-      if (config.locked) initialLocks[id] = true;
-    });
-    setLocks(initialLocks);
+    // Load locks from localStorage, fallback to config defaults
+    const savedLocks = localStorage.getItem('hosting-manager-locks');
+    if (savedLocks) {
+      setLocks(JSON.parse(savedLocks));
+    } else {
+      const initialLocks = {};
+      Object.entries(SITE_CONFIG).forEach(([id, config]) => {
+        if (config.locked) initialLocks[id] = true;
+      });
+      setLocks(initialLocks);
+    }
   }, []);
 
   const toggleLock = (siteId) => {
-    setLocks(prev => ({ ...prev, [siteId]: !prev[siteId] }));
+    setLocks(prev => {
+      const newLocks = { ...prev, [siteId]: !prev[siteId] };
+      // Save to localStorage
+      localStorage.setItem('hosting-manager-locks', JSON.stringify(newLocks));
+      return newLocks;
+    });
   };
 
   const filteredSites = sites.filter(site => {
