@@ -11,7 +11,7 @@ import './App.css';
 // Auth credentials (hashed in production, plain for demo)
 const AUTH_CREDENTIALS = {
   email: 'admin@advancedmarketing.co',
-  password: 'JEsus777$!'
+  password: 'JEsus777$$!'
 };
 
 // Site configuration with locks and database connections
