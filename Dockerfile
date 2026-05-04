@@ -18,6 +18,7 @@ COPY package*.json ./
 RUN npm ci --production
 
 COPY server.js ./
+COPY pg-wrapper.js ./
 COPY netlify ./netlify
 COPY --from=builder /app/dist ./dist
 
