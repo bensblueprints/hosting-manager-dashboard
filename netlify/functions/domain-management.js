@@ -1,4 +1,4 @@
-// Domain Management API for Hosting Manager
+﻿// Domain Management API for Hosting Manager
 // Handles adding domains to sites and managing DNS via Cloudflare
 
 const NETLIFY_API = 'https://api.netlify.com/api/v1';

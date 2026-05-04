@@ -1,4 +1,4 @@
-// Neon Database Management API
+﻿// Neon Database Management API
 // Handles creating databases, managing connections, viewing tables
 
 const { Client } = require('pg');

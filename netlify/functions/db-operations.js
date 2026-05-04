@@ -1,4 +1,4 @@
-// Database Operations for Hosting Manager
+﻿// Database Operations for Hosting Manager
 // Handles locks, auth sessions, audit logging, and data persistence
 
 const { Client } = require('pg');

@@ -1,4 +1,4 @@
-// Netlify Site & Domain Management API
+﻿// Netlify Site & Domain Management API
 // Requires NETLIFY_ACCESS_TOKEN environment variable
 
 const NETLIFY_API = 'https://api.netlify.com/api/v1';

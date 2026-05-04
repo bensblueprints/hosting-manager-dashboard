@@ -10,7 +10,7 @@ import {
 } from 'lucide-react';
 import './App.css';
 
-const API_BASE = '/.netlify/functions';
+const API_BASE = '/api';
 
 function App() {
   // Auth state

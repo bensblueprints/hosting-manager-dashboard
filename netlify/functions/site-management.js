@@ -1,4 +1,4 @@
-// Site Management API for Hosting Manager
+﻿// Site Management API for Hosting Manager
 // Handles creating sites, deploying repos, managing builds
 
 const NETLIFY_API = 'https://api.netlify.com/api/v1';

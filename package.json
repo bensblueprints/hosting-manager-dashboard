@@ -2,14 +2,15 @@
   "name": "hosting-dashboard",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "start": "node server.js",
     "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
+    "express": "^4.21.0",
     "lucide-react": "^0.563.0",
     "pg": "^8.18.0",
     "react": "^19.2.0",
