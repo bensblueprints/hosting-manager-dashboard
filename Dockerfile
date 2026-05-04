@@ -1,5 +1,4 @@
-# Build stage
-FROM node:20-alpine AS builder
+FROM node:20-alpine
 
 WORKDIR /app
 
@@ -8,19 +7,6 @@ RUN npm ci
 
 COPY . .
 RUN npm run build
-
-# Production stage
-FROM node:20-alpine
-
-WORKDIR /app
-
-COPY package*.json ./
-RUN npm ci --production
-
-COPY server.js ./
-COPY pg-wrapper.js ./
-COPY netlify ./netlify
-COPY --from=builder /app/dist ./dist
 
 ENV PORT=3000
 EXPOSE 3000
