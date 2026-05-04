@@ -1,5 +1,16 @@
-const express = require('express');
 const path = require('path');
+
+// Monkey-patch pg module to use pg-mem fallback when DATABASE_URL is not set
+const pgWrapper = require('./pg-wrapper');
+const pgPath = require.resolve('pg');
+require.cache[pgPath] = {
+  id: 'pg',
+  filename: pgPath,
+  loaded: true,
+  exports: pgWrapper
+};
+
+const express = require('express');
 
 // Import Netlify function handlers
 const dbOperations = require('./netlify/functions/db-operations');
